@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import org.parceler.Parcels;
 
 import br.com.bleiva.tabsapp.databinding.UsuarioCadastroBinding;
+import br.com.bleiva.tabsapp.presenters.SalvaUsuarioPresenter;
 import br.com.bleiva.tabsapp.repo.Usuario;
 
 public class UsuarioActivity extends AppCompatActivity {
@@ -26,6 +27,7 @@ public class UsuarioActivity extends AppCompatActivity {
 
         UsuarioCadastroBinding usuarioCadastroBinding = DataBindingUtil.setContentView(this, R.layout.activity_usuario);
         usuarioCadastroBinding.setUsuario(usuario);
+        usuarioCadastroBinding.setPresenter(new SalvaUsuarioPresenter());
 
     }
 
