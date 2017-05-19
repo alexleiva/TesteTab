@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<data>
+    <variable
+        name= "usuario"
+        type= "br.com.bleiva.tabsapp.repo.Usuario"/>
+</data>
+
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:clickable="false"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Nome" />
+
+        <TextView
+            android:id="@+id/edtNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textView"
+            android:layout_marginLeft="25dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@{usuario.nome, default=PLACEHOLDER}" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_below="@id/textView"
+            android:layout_alignLeft="@id/textView"
+            android:text="Endereço" />
+
+        <TextView
+            android:id="@+id/edtEndereco"
+            android:layout_below="@id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/edtNome"
+            android:text="@{usuario.endereco, default=PLACEHOLDER}" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+</layout>
